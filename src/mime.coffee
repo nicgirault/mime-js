@@ -50,10 +50,6 @@ window.Mime = do ->
 
     createHtml = (msg) ->
       htmlContent = msg.body || ""
-      htmlContent = htmlContent.replace(/&/g, '&amp;').replace(/</g, '&lt;')
-      .replace(/>/, '&gt;').replace(/\n/g, '\n<br/>')
-
-      htmlContent = linkify(htmlContent)
 
       htmlContent = '<div>' + htmlContent + '</div>'
       '\nContent-Type: text/html; charset=UTF-8' +
@@ -75,7 +71,7 @@ window.Mime = do ->
         type = cid.type
         name = cid.name
         base64 = cid.base64
-        id = getBoundary()
+        id = cid.id
 
         cidArr.push '\nContent-Type: ' + type + '; name=\"' + name + '\"' +
           '\nContent-Transfer-Encoding: base64' +

@@ -1,0 +1,25 @@
+{
+  "name": "MimeJS",
+  "description": "a librairy to build mime messages",
+  "main": "dist/mime.js",
+  "version": "v1.0.0",
+  "authors": [
+    "Ikrom"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "mime",
+    "rfc822",
+    "email",
+    "mailer"
+  ],
+  "homepage": "https://github.com/nicgirault/mime-js",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

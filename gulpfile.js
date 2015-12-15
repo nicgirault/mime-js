@@ -4,15 +4,17 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify');
 
 gulp.task('coffee-uglify', function () {
-    var stream = gulp.src([
-        "src/mime-js.coffee"
-    ]);
-    stream
-        .pipe(coffee())
-        .pipe(gulp.dest('./dist/'))
-        .pipe(uglify())
-        .pipe(concat({path: 'mime-js.min.js'}))
-        .pipe(gulp.dest('./dist/'))
+  var stream = gulp.src([
+    "src/base64.coffee",
+    "src/mime.coffee"
+  ]);
+  stream
+    .pipe(concat('mime.coffee'))
+    .pipe(coffee())
+    .pipe(gulp.dest('./dist/'))
+    .pipe(uglify())
+    .pipe(concat({path: 'mime.min.js'}))
+    .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('default', [
